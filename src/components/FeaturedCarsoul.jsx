@@ -64,10 +64,10 @@ function FeaturedCarousel({ events }) {
     const queryClient = useQueryClient();
 
     const navigate = useNavigate();
-    const bookEvent = async (eventId) => {
+    const bookEvent = async (event) => {
         try {
             let config = {
-                url: `${bookingAPIs.bookEvent.url}/${eventId}`,
+                url: `${bookingAPIs.bookEvent.url}/${event._id}`,
                 method: bookingAPIs.bookEvent.method,
                 headers: {
                     token: `${bearer} ${token}`,
@@ -76,6 +76,7 @@ function FeaturedCarousel({ events }) {
             await axios.request(config);
             queryClient.invalidateQueries(["events"]);
             toast.success("Event booked successfully");
+            navigate("/congrats", {state:{event}});
         } catch (error) {
             console.error("Error booking event:", error);
             Swal.fire({
@@ -86,7 +87,7 @@ function FeaturedCarousel({ events }) {
         }
     };
 
-    const handleBook = async (eventId) => {
+    const handleBook = async (event) => {
         if (!user) {
             Swal.fire({
                 title: "Please login to book an event",
@@ -101,9 +102,9 @@ function FeaturedCarousel({ events }) {
             });
             return;
         }
-        setLoadingEvents((prev) => ({ ...prev, [eventId]: true }));
-        await bookEvent(eventId);
-        setLoadingEvents((prev) => ({ ...prev, [eventId]: false }));
+        setLoadingEvents((prev) => ({ ...prev, [event?._id]: true }));
+        await bookEvent(event);
+        setLoadingEvents((prev) => ({ ...prev, [event?._id]: false }));
         await fetchBookings();
     };
 
@@ -209,7 +210,7 @@ function FeaturedCarousel({ events }) {
                                             )
                                         }
                                         onClick={() => {
-                                            handleBook(event._id);
+                                            handleBook(event);
                                         }}
                                         className={`mt-4 w-full rounded-md py-2 px-3 text-sm font-semibold flex items-center justify-between cursor-pointer
         ${

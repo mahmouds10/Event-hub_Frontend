@@ -11,6 +11,7 @@ import AllUsers from "../pages/AllUsers.jsx";
 import AllEvents from "../pages/AllEvents.jsx";
 import EventPage from "../pages/EventPage.jsx";
 import Cart from "../pages/Cart.jsx";
+import Congrats from "../pages/Congrats.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +31,11 @@ export const router = createBrowserRouter([
                 path: "/signup",
                 element: <Signup />,
             },
+            {
+                path:"/congrats",
+                element:<Congrats />,
+            }
+            ,
             {
                 path: "/my-profile",
                 element: (

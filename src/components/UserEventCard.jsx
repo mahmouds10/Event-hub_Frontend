@@ -23,15 +23,13 @@ const UserEventCard = ({ event }) => {
     const [isLoading, setIsLoading] = useState(false);
     const { books, fetchBookings } = useContext(BooksContext);
 
-
-
     const navigate = useNavigate();
 
     const queryClient = useQueryClient();
-    const bookEvent = async (eventId) => {
+    const bookEvent = async (event) => {
         try {
             let config = {
-                url: `${bookingAPIs.bookEvent.url}/${eventId}`,
+                url: `${bookingAPIs.bookEvent.url}/${event._id}`,
                 method: bookingAPIs.bookEvent.method,
                 headers: {
                     token: `${bearer} ${token}`,
@@ -40,6 +38,9 @@ const UserEventCard = ({ event }) => {
             await axios.request(config);
             queryClient.invalidateQueries(["events"]);
             toast.success("Event booked successfully");
+            navigate("/congrats", {
+                state: { event },
+            });
         } catch (error) {
             console.error("Error booking event:", error);
             Swal.fire({
@@ -66,7 +67,7 @@ const UserEventCard = ({ event }) => {
             return;
         }
         setIsLoading(true);
-        await bookEvent(event._id);
+        await bookEvent(event);
         setIsLoading(false);
         await fetchBookings();
     };

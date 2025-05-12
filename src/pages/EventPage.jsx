@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react";
 import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { Icon } from "leaflet";
 import "leaflet/dist/leaflet.css";
-import { eventsAPIs } from "../utils/APIs.js";
+import { bearer, bookingAPIs, eventsAPIs } from "../utils/APIs.js";
 import axios from "axios";
 import { HiOutlineCalendarDateRange, HiOutlineUser } from "react-icons/hi2";
 import {
@@ -18,6 +18,8 @@ import { Button } from "@mui/material";
 import { useQueryClient } from "@tanstack/react-query";
 import { BooksContext } from "../contexts/books.context.jsx";
 import { UserContext } from "../contexts/user.context.jsx";
+import Swal from "sweetalert2";
+import toast from "react-hot-toast";
 
 const EventPage = () => {
     const [event, setEvent] = React.useState({});
@@ -110,6 +112,9 @@ const EventPage = () => {
             await axios.request(config);
             queryClient.invalidateQueries(["events"]);
             toast.success("Event booked successfully");
+            navigate("/congrats", {
+                state: { event },
+            });
         } catch (error) {
             console.error("Error booking event:", error);
             Swal.fire({
