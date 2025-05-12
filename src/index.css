@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    @apply bg-slate-100;
+    font-family: "Lato", sans-serif;
+}
+
+@theme {
+    --color-primary: #5669ff;
+    --color-primary-hover: #4754e0;
+    --color-dark: #120d26;
+}
+
+.slick-slide > div {
+    height: 100%;
+}
+
+.outlet {
+    min-height: calc(100vh - 53px);
+    padding-top: 64px;
+}
+.min-h-inherit {
+    min-height: inherit;
+}
+.full-h {
+    min-height: calc(100vh - 117px);
+}
+.valid-input {
+    border: 1px solid;
+    border-color: #10b981 !important;
+}
+.invalid-input {
+    border: 1px solid;
+    border-color: #ef4444 !important;
+}
+::-ms-reveal {
+    display: none;
+}
+
+.panal-icon {
+    position: absolute;
+    left: -50px;
+    transition: all 0.3s ease;
+}
+
+.panal-item:hover .panal-icon {
+    left: 10px;
+}
+
+.panal-item:hover {
+    padding-left: 3rem;
+}
+
+.userTable {
+    @apply bg-white;
+}
+.userTable th,
+.userTable td {
+    @apply border text-base font-medium p-2  text-center;
+}
+.userTable th {
+    @apply bg-gray-200;
+}
+.userTable tr:nth-child(even) {
+    @apply bg-gray-200;
+}
+.userTable tr:nth-child(odd) {
+    @apply bg-gray-100;
+}
+
+.dots-1 {
+    width: 35px;
+    aspect-ratio: 1;
+    --_g: no-repeat radial-gradient(circle closest-side, #5669ff 90%, #0000);
+    background: var(--_g) 0 0, var(--_g) 0 100%, var(--_g) 100% 100%;
+    background-size: 40% 40%;
+    animation: d1 1s infinite linear;
+}
+@keyframes d1 {
+    25% {
+        background-position: 100% 0, 0 100%, 100% 100%;
+    }
+    50% {
+        background-position: 100% 0, 0 0, 100% 100%;
+    }
+    75% {
+        background-position: 100% 0, 0 0, 0 100%;
+    }
+    100% {
+        background-position: 100% 100%, 0 0, 0 100%;
+    }
+}
+.leaflet-container {
+    z-index: 0 !important;
+}
+
+.grey {
+    stroke-dasharray: 788 790;
+    stroke-dashoffset: 789;
+    animation: draw_0 3200ms infinite, fade 3200ms infinite;
+}
+
+.blue {
+    stroke-dasharray: 788 790;
+    stroke-dashoffset: 789;
+    animation: draw_1 3200ms infinite, fade 3200ms infinite;
+}
+
+@keyframes fade {
+    0% {
+        stroke-opacity: 1;
+    }
+    80% {
+        stroke-opacity: 1;
+    }
+    100% {
+        stroke-opacity: 0;
+    }
+}
+
+@keyframes draw_0 {
+    9.375% {
+        stroke-dashoffset: 789;
+    }
+    39.375% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes draw_1 {
+    35.625% {
+        stroke-dashoffset: 789;
+    }
+    65.625% {
+        stroke-dashoffset: 0;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+.st0 {
+    fill: none;
+    stroke: #bbbbbb;
+    stroke-width: 3;
+    stroke-miterlimit: 10;
+}
+.st1 {
+    fill: none;
+    stroke: #004772;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
