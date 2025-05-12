@@ -1,5 +1,6 @@
 {
   "name": "frontend",
+  "homepage": "http://mahmpuds10.github.io/Areeb_Frontend",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,7 +8,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -19,6 +22,7 @@
     "axios": "^1.9.0",
     "date-fns": "^4.1.0",
     "formik": "^2.4.6",
+    "gh-pages": "^6.3.0",
     "joi": "^17.13.3",
     "leaflet": "^1.9.4",
     "lottie-react": "^2.4.1",
