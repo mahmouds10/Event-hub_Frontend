@@ -1,12 +1,96 @@
-# React + Vite
+# 🎨 Frontend – Event Booking System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Full-Stack Event Booking System built with **React + Vite**. It provides an intuitive, responsive web interface for users to browse and book events, as well as an admin panel for managing them.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Features
 
-## Expanding the ESLint configuration
+-   🔐 **Authentication**  
+    Users can register and log in to access the system.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+-   🏠 **Home Page (Event Listings)**
+
+    -   Display all events in a responsive grid layout.
+    -   Booked events show a "Booked" label instead of "Book Now".
+
+-   📄 **Event Details Page**
+
+    -   Shows full event information (name, date, venue, price, etc.).
+    -   Includes a "Book Now" button that books a ticket and redirects to a Congratulations screen.
+
+-   🧾 **Admin Panel**
+
+    -   Admin users can create, edit, delete, and view all events.
+    -   Secure access based on user role.
+
+-   📱 **Responsive Design**  
+    Optimized for desktop and tablet screens using modern CSS practices.
+
+---
+
+## ⚙️ Getting Started
+
+These instructions will help you run the frontend locally.
+
+### 📦 Prerequisites
+
+Make sure you have the following installed:
+
+-   [Node.js](https://nodejs.org/) (v16 or higher recommended)
+-   [npm](https://www.npmjs.com/)
+
+### 🚀 Installation & Run
+
+1. **Navigate to the frontend directory:**
+
+    ```
+    cd frontend
+    ```
+
+2. **Install dependencies:**
+
+    ```
+    npm install
+    ```
+
+3. **Run the development server:**
+
+    ```
+    npm run dev
+    ```
+
+4. **Open in Browser:**
+    ```
+    Visit `http://localhost:5173` to view the app.
+    ```
+---
+## 🔗 Backend Connection
+The frontend connects to a **deployed backend** via REST API endpoints.
+
+---
+
+## 🧠 AI Tools Used
+ChatGPT – Used for development planning, component generation, and bug fixing.
+GitHub Copilot – Used for autocompleting code and boosting productivity.
+
+---
+
+## 📁 Project Structure (Frontend Only)
+
+```
+frontend/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── context/
+│   ├── layout/
+│   ├── routes/
+│   ├── hooks/
+│   ├── utils/
+│   └── App.jsx
+├── index.html
+├── package.json
+└── vite.config.js
+```
