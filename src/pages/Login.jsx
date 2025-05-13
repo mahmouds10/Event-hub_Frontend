@@ -92,7 +92,7 @@ function Login() {
             localStorage.setItem("token", res?.data?.token);
             Swal.fire({
                 icon: "success",
-                title: `Welcome back ${res?.data?.user?.name} !`,
+                title: `Welcome back ${res?.data?.user?.name?.split(" ")[0]} !`,
                 text: "You are successfully logged in",
                 showConfirmButton: true,
             }).then(() => {
