@@ -214,7 +214,7 @@ const Header = () => {
                                             )}
                                             <div className="w-full bg">
                                                 <Link
-                                                    to={"/admin-panal/products"}
+                                                    to={"/admin-panal/all-events"}
                                                     onClick={() =>
                                                         setAdminMenuVisible(
                                                             (prev) => !prev
@@ -222,7 +222,7 @@ const Header = () => {
                                                     }
                                                     className="whitespace-nowrap hover:bg-slate-100 block p-2 w-full text-center "
                                                 >
-                                                    All products
+                                                    All Events
                                                 </Link>
                                             </div>
                                         </nav>
