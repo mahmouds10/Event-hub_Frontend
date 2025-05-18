@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useEvents } from "../hocks/useEvent.js";
+import { useEvents } from "../hooks/useEvent.js";
 import {
     Card,
     CardContent,
