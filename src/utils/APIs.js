@@ -1,4 +1,4 @@
-const backendDomain = "https://areebbackend-production.up.railway.app/api";
+const backendDomain = "https://areebbackend-production-ea3c.up.railway.app/api";
 
 const authUrl = `${backendDomain}/auth`;
 const eventsUrl = `${backendDomain}/events`;
