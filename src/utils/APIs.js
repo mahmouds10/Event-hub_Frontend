@@ -1,4 +1,4 @@
-const backendDomain = "https://areebbackend-production-ea3c.up.railway.app/api";
+const backendDomain = "https://event-hub-backend-1ppp.vercel.app/api";
 
 const authUrl = `${backendDomain}/auth`;
 const eventsUrl = `${backendDomain}/events`;
